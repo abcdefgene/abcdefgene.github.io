@@ -10,6 +10,8 @@
 var canvasElem;
 var world;
 var score = 0;
+// Establish variable for sound
+// var mySound;
 
 window.onload = initAll;
 
@@ -31,11 +33,11 @@ function initAll() {
 
     world.createEntity({
         name: "player",
-        shape: "circle",
+        shape: "circle", 
         image: "favicon.ico",
         radius: 1,
         density: 4,
-        X: 2,
+        x: 6,
         onKeyDown: kick
     });
 
@@ -209,7 +211,9 @@ function impact(entity) {
         this.destroy();
         score = score + 1690;
         document.getElementById("txtScore").innerHTML = "Score: " + score;
-        //Put code for scoring here
+        // Possible sound code on impact
+        // mySound = new sound("soundName.mp3");
+        // mySound.play();
     }
 }
 
